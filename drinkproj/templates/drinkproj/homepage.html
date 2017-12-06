@@ -4,7 +4,7 @@
 {% block content %}
     {% for event in events %}
     <div class="event_list col-md-12">
-        {{ event }}
+        <h1><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h1>
     </div>
     {% endfor %}
 {% endblock %}
