@@ -25,7 +25,7 @@ SECRET_KEY = 'f6nt=1@u*mg3goy-@nw(k)n$m^vhf8op*vu53o$+3ge*a)1e*v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', 'johnathan.tse',]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drinkproj',
 ]
 
 MIDDLEWARE = [
@@ -75,17 +76,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        #can't get mysql db to work atm. Below are settings for it
-
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'drinkproj',
-        # 'USER': 'root',
-        # 'PASSWORD':'bright123',
-        # 'HOST':'127.0.0.1',
-        # 'PORT': '3306'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'drinkproj',
+        'USER': 'root',
+        'PASSWORD':'blogger123',
+        'HOST':'127.0.0.1',
+        'PORT': '3306'
 
     }
 }
@@ -115,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 

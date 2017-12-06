@@ -1,0 +1,10 @@
+{% extends 'drinkproj/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% for event in events %}
+    <div class="event_list col-md-12">
+        {{ event }}
+    </div>
+    {% endfor %}
+{% endblock %}

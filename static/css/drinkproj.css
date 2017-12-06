@@ -1,0 +1,11 @@
+.title1{
+    font-size: 36pt;
+    color: lightskyblue;
+    text-align: center;
+    padding: 10px;
+    background-color: indianred;
+}
+
+base{
+    background-color: blue;
+}

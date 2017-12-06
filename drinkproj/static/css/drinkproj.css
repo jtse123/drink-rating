@@ -1,0 +1,28 @@
+/**{*/
+    /*border-style:dotted;*/
+/*}*/
+
+.base_title{
+    font-size: 36pt;
+    color: lightskyblue;
+    text-align: center;
+    padding: 10px;
+    /*background-color: indianred;*/
+}
+
+.logo{
+    /*background-color: blue;*/
+    padding: 9px;
+
+}
+
+img{
+    vertical-align: top;
+}
+
+.event_list{
+    text-align:center;
+    font-size: 30px;
+    background-color: lightskyblue;
+    padding: 100px;
+}
