@@ -5,18 +5,16 @@
     <div class="col-md-8">
         <h1>{{ event.event_name }}</h1>
     </div>
-    <div class="col-md-4">
-        Rate Drinks
-    </div>
     <div class="col-md-12">
     {% for item in items %}
         <h4 class="item">{{ item.drink }}</h4>
-{#        <div>#}
-{#            <p id="rate_title">Rate:</p>#}
-{#            <form method="POST" class="rate-form">{% csrf_token %}#}
-{#                {{ form.as_p }}#}
-{#            </form>#}
-{#        </div>#}
+        <div>
+            <p id="rate_title">Rate:</p>
+            <form method="POST" class="rate-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Submit</button>
+            </form>
+        </div>
         <img src="{{ drinks.image.url }}">
 {#        rate drink form#}
 
