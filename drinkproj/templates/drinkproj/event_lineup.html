@@ -6,20 +6,14 @@
         <h1>{{ event.event_name }}</h1>
     </div>
     <div class="col-md-4">
-        Rate Drinks
+        <a href="{% url 'rate' id=event.id %}">Rate Drinks</a>
     </div>
     <div class="col-md-12">
     {% for item in items %}
         <h4 class="item">{{ item.drink }}</h4>
-{#        <div>#}
-{#            <p id="rate_title">Rate:</p>#}
-{#            <form method="POST" class="rate-form">{% csrf_token %}#}
-{#                {{ form.as_p }}#}
-{#            </form>#}
-{#        </div>#}
-        <img src="{{ drinks.image.url }}">
-{#        rate drink form#}
-
+        {% if item.drink.image.url != None %}
+            <img src="{{ item.drink.image.url }}"/>
+        {% endif %}
     {% endfor %}
     </div>
 {% endblock %}

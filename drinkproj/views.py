@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from drinkproj.models import *
 from django.shortcuts import get_object_or_404
 from drinkproj.forms import *
+from django.forms import formset_factory, modelformset_factory
+
 
 # Create your views here.
 
@@ -18,9 +20,9 @@ def event_lineup(request,id):
     event = get_object_or_404(Event, id=id)
     # Trying to display event_lineup objects depending on event
     items = Event_Lineup.objects.filter(event_id=Event.objects.filter(id=id))
-    #drinks = Drink.objects.filter(id= Event_Lineup.objects.filter(drink_id=id))
+    drinks = Drink.objects.filter(id= Event_Lineup.objects.filter(drink_id=id))
     #form = RatingForm(request.POST or None)
-    return render(request,'drinkproj/event_lineup.html',{'event':event,'items':items})
+    return render(request,'drinkproj/event_lineup.html',{'event':event,'items':items, 'drinks':drinks })
 
 
 # Form displays drinks in event lineup, and allows user to rate drinks and leave a comment
@@ -29,7 +31,20 @@ def rate_drink(request,id):
     print (request.META.get("HTTP_X_FORWARDED_FOR"))
     event = get_object_or_404(Event, id=id)
     items = Event_Lineup.objects.filter(event_id=Event.objects.filter(id=id))
-    #drinks = Drink.objects.filter(id= Event_Lineup.objects.filter(event_id=id))
+
+    #for more than 1 form in html template
+    # RatingFormset = modelformset_factory(Rating, form=RatingForm)
+    # formset= RatingFormset(request.POST or None)
+    # if formset.is_valid():
+    #     instances = formset.save(commit=False)
+    #     for instance in instances:
+    #         instance.ip_address = request.META['REMOTE_ADDR']
+    #         drink = Drink.objects.get(id=Event_Lineup.objects.filter(drink=id))
+    #         instance.drink_id = drink.id
+    #         instance.save()
+
+
+    #for one form:
     form = RatingForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
@@ -39,7 +54,8 @@ def rate_drink(request,id):
             drink = Drink.objects.get(id=Event_Lineup.objects.filter(drink=id))
             #access the id of the drink variable and assigns it to the fk drink_id in the Ratings model
             rating.drink_id = drink.id
-            print (rating.drink_id)
+            #print (rating.drink_id)
             rating.save()
             return(redirect('home'))
-    return render(request,'drinkproj/rate.html',{'event':event,'items':items, 'form':form})
+
+    return render(request,'drinkproj/rate.html',{'event':event,'items':items, 'form':form })

@@ -131,4 +131,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #Needed to show images in website
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

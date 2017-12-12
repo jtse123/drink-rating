@@ -8,6 +8,9 @@
     <div class="col-md-12">
     {% for item in items %}
         <h4 class="item">{{ item.drink }}</h4>
+            {% if item.drink.image.url != None %}
+                <img src="{{ item.drink.image.url }}"/>
+        {% endif %}
         <div>
             <p id="rate_title">Rate:</p>
             <form method="POST" class="rate-form">{% csrf_token %}
