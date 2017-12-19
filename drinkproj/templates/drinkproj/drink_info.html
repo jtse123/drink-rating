@@ -1,0 +1,25 @@
+{% extends 'drinkproj/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="col-md-12">
+        {{ drink }}
+        {% if drink.image.url != None %}
+            <img src="{{ drink.image.url }}"/>
+        {% endif %}
+
+{#    currently this is a placeholder for rating. Rating will be the average of all combined ratings for specific drink#}
+        <h4>Rating: 5 out of 5 stars</h4>
+
+        <form method="POST" class="rate-form">{% csrf_token %}
+            <div>{{ form.as_p }}</div>
+            <button type="submit" class="save btn btn-default">Submit</button>
+        </form>
+    {% for rating in ratings %}
+        {% if rating.drink_id == drink.id %}
+            <p>{{ rating.comment|linebreaksbr }}</p>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
