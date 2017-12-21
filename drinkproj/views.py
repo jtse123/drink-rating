@@ -4,6 +4,10 @@ from django.shortcuts import get_object_or_404
 from drinkproj.forms import *
 from django.utils import timezone
 
+#Django Rest Framework imports:
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from drinkproj.serializers import *
 
 # Create your views here.
 
@@ -42,37 +46,10 @@ def drink_info(request, id):
     return render(request, 'drinkproj/drink_info.html',{'drink':drink, 'form':form, 'ratings':ratings})
 
 
+@api_view(['GET','POST'])
+def drink_comments(request, fk):
+    if request.method == 'GET':
+        comments = Rating.objects.filter(drink_id=fk)
+        serializer = RatingSerializer(comments, many=True)
 
-
-
-
-
-# Form displays drinks in event lineup, and allows user to rate drinks and leave a comment
-def rate_drink(request,id):
-    print (request.META.get("REMOTE_ADDR"))
-    print (request.META.get("HTTP_X_FORWARDED_FOR"))
-    event = get_object_or_404(Event, id=id)
-    items = Event_Lineup.objects.filter(event_id=Event.objects.filter(id=id))
-
-    #for one form:
-    form = RatingForm(request.POST or None)
-    if request.method == "POST":
-        # import pdb
-        # pdb.set_trace()
-        if form.is_valid():
-            rating = form.save(commit=False)
-            rating.ip_address = request.META['REMOTE_ADDR']
-
-            #Looks up drink object and assigns it to drink variable
-            #drink = Drink.objects.get(id=Event_Lineup.objects.filter(drink=id))
-            #drink = Drink.objects.get(id= event.drink)
-            event_drinks = Event_Lineup.objects.filter(id=id)
-            for drink in event_drinks:
-                drink_ins= drink.drink
-
-            #access the id of the drink variable and assigns it to the fk drink_id in the Ratings model
-            rating.drink_id = drink_ins
-            rating.save()
-            return(redirect('home'))
-
-    return render(request,'drinkproj/rate.html',{'event':event,'items':items, 'form':form })
+        return Response(serializer.data)
