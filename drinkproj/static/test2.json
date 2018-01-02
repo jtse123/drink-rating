@@ -1,0 +1,26 @@
+[
+    {
+        "id": 3,
+        "ip_address": "127.0.0.1",
+        "comment": "this is a test 1",
+        "post_date": "2017-12-12T14:28:09.834777-08:00",
+        "drink": 1,
+        "rating_choices": 4
+    },
+    {
+        "id": 4,
+        "ip_address": "127.0.0.1",
+        "comment": "test 2",
+        "post_date": "2017-12-12T14:40:04.385659-08:00",
+        "drink": 1,
+        "rating_choices": 4
+    },
+    {
+        "id": 5,
+        "ip_address": "127.0.0.1",
+        "comment": "test 3",
+        "post_date": "2017-12-12T16:43:36.174401-08:00",
+        "drink": 1,
+        "rating_choices": 5
+    }
+]

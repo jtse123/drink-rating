@@ -4,7 +4,10 @@
 
 {% block content %}
     <div class="col-md-12">
-        {{ drink }}
+        <div class="drink">
+            {{ drink }}
+        </div>
+
         {% if drink.image.url != None %}
             <img src="{{ drink.image.url }}"/>
         {% endif %}
@@ -16,10 +19,12 @@
             <div>{{ form.as_p }}</div>
             <button type="submit" class="save btn btn-default">Submit</button>
         </form>
-    {% for rating in ratings %}
-        {% if rating.drink_id == drink.id %}
-            <p>{{ rating.comment|linebreaksbr }}</p>
-        {% endif %}
-    {% endfor %}
+{#    {% for rating in ratings %}#}
+{#        {% if rating.drink_id == drink.id %}#}
+        <div ng-repeat="comment in comments_data">
+            <p>{$ comment.comment $}</p>
+        </div>
+{#        {% endif %}#}
+{#    {% endfor %}#}
     </div>
 {% endblock %}

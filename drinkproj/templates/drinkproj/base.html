@@ -16,24 +16,12 @@
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-        <script type =text/javascript src="/static/"></script>
+        <script type =text/javascript src="{% static 'js/app.js' %}"></script>
+        <script src="{% url 'ratings_list' %}"></script>
+{#        this is a test file#}
+        <script src="{% static 'test2.json' %}"></script>
 
-        {#following allows us to use {$ $} to read angular instead of {{  }}   #}
-{#        <script type="text/javascript">#}
-{#            angular.module('SSS', ['ngMaterial', 'textAngular', 'ngMessages'])#}
-{#                .config(function($mdThemingProvider) {#}
-{#                    $mdThemingProvider.theme('default')#}
-{#                    .primaryPalette('deep-orange')#}
-{#                     })#}
-{#                .config(function($interpolateProvider) {#}
-{#                    $interpolateProvider.startSymbol('{$');#}
-{#                    $interpolateProvider.endSymbol('$}');#}
-{#                    })#}
-{#                .config(['$httpProvider', function($httpProvider) {#}
-{#                    $httpProvider.defaults.xsrfCookieName = 'csrftoken';#}
-{#                    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';#}
-{#                    }])#}
-{#        </script>#}
+        <div class="drink_id">{{ drink.id }}</div>
     </head>
 
 
@@ -47,10 +35,16 @@
             </div>
             <div class="base_title col-md-4">
                 <p id = title_text><a href="{% url 'home' %}">Drink Rater</a></p>
-                <p>{$ 'Hello' $}</p>
-                <p>{$ project.product.test_name $}</p>
-                <script src="static/js/app.js"></script>
+{#                <p>{$ 'Hello' $}</p>#}
+{#                <p>{$ project.product.test_name $}</p>#}
                 <p>{$ name $}</p>
+
+{#                Testing pulling from json script. Delete later#}
+{#                <p>{$ json_test2 $}</p>#}
+{#                <li ng-repeat="comment in comments_data">#}
+{#                    <p>{$ comment.comment $}</p>#}
+
+{#                </li>#}
             </div>
         </div>
         <div>
