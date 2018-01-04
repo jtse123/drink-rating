@@ -21,30 +21,25 @@
 {#        this is a test file#}
         <script src="{% static 'test2.json' %}"></script>
 
-        <div class="drink_id">{{ drink.id }}</div>
+{#        following class drink_id is used in app.js#}
+        <script class="drink_id">{{ drink.id }}</script>
     </head>
 
 
 
     <body ng-controller="ProjectController as project">
         <div class="header">
-            <div class="logo col-md-4">
+            <div class="logo col-xs-4">
                 <a href="https://www.brightscope.com/">
                     <img src="https://d28wdra5vrkblv.cloudfront.net/media/consumer/img/logos/logo_bs_color_2x-1.38e83716c85e.png">
                 </a>
             </div>
-            <div class="base_title col-md-4">
+            <div class="base_title col-xs-8">
                 <p id = title_text><a href="{% url 'home' %}">Drink Rater</a></p>
 {#                <p>{$ 'Hello' $}</p>#}
 {#                <p>{$ project.product.test_name $}</p>#}
-                <p>{$ name $}</p>
+{#                <p>{$ name $}</p>#}
 
-{#                Testing pulling from json script. Delete later#}
-{#                <p>{$ json_test2 $}</p>#}
-{#                <li ng-repeat="comment in comments_data">#}
-{#                    <p>{$ comment.comment $}</p>#}
-
-{#                </li>#}
             </div>
         </div>
         <div>

@@ -4,10 +4,9 @@
 
 .base_title{
     font-size: 36pt;
-    color: lightskyblue;
+    background-color: lightskyblue;
     text-align: center;
     padding: 10px;
-    /*background-color: indianred;*/
 }
 
 .logo{
@@ -23,6 +22,18 @@ img{
 .event_list{
     text-align:center;
     font-size: 30px;
-    background-color: lightskyblue;
-    padding: 100px;
+    color: black;
+}
+
+/*.homepage{*/
+    /*background-color: lightgreen;*/
+/*}*/
+
+#event{
+    background-color: powderblue;
+    border-style: ridge;
+}
+
+.upcoming_event{
+    border-style: dotted;
 }

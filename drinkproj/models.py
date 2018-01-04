@@ -23,6 +23,7 @@ class Event(models.Model):
     event_name = models.CharField(max_length=200)
     date = models.DateTimeField()
     description = models.TextField()
+    image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return self.event_name

@@ -1,9 +1,10 @@
 {% extends 'drinkproj/base.html' %}
 {% load staticfiles %}
+{%  load rest_framework %}
 
 
 {% block content %}
-    <div class="col-md-12">
+    <div class="col-xs-12">
         <div class="drink">
             {{ drink }}
         </div>
@@ -16,15 +17,14 @@
         <h4>Rating: 5 out of 5 stars</h4>
 
         <form method="POST" class="rate-form">{% csrf_token %}
-            <div>{{ form.as_p }}</div>
-            <button type="submit" class="save btn btn-default">Submit</button>
+{#            <div>{{ form.as_p }}</div>#}
+{#            <button type="submit" class="save btn btn-default">Submit</button>#}
+{#            following is a test for submitting a form directly to rest framework#}
+{#            {% render_form serializer %}#}
+            <input type="submit" value="save">
         </form>
-{#    {% for rating in ratings %}#}
-{#        {% if rating.drink_id == drink.id %}#}
         <div ng-repeat="comment in comments_data">
             <p>{$ comment.comment $}</p>
         </div>
-{#        {% endif %}#}
-{#    {% endfor %}#}
     </div>
 {% endblock %}

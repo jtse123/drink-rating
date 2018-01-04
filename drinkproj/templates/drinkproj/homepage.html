@@ -2,9 +2,23 @@
 {% load staticfiles %}
 
 {% block content %}
-    {% for event in events %}
-    <div class="event_list col-md-12">
-        <h1><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h1>
+    <div class="homepage container-fluid">
+    <div class="row">
+        <div class="upcoming_event col-xs-4">
+            <h3>Upcoming Event</h3>
+            <h4>{{ obj.event_name }}</h4>
+            <h5>{{ obj.id }}</h5>
+
+        </div>
+        <div class="event_list col-xs-8">
+        {% for event in events %}
+            <div class="jumbotron" id="event">
+                <h2><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h2>
+                <h4>{{ event.description }}</h4>
+            </div>
+
+        {% endfor %}
+        </div>
     </div>
-    {% endfor %}
+    </div>
 {% endblock %}
