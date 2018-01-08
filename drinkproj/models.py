@@ -37,12 +37,12 @@ class Rating(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
 
     #Ratings Section 1-5. 1 being lowest, 5 being best.
-    rating = ((1, '1'),
+    rating_choices = ((1, '1'),
               (2, '2'),
               (3, '3'),
               (4, '4'),
               (5, '5'))
-    rating_choices = models.IntegerField(max_length=20, choices=rating)
+    rating = models.IntegerField(max_length=20, choices=rating_choices)
 
 #Determines what drinks an event has
 class Event_Lineup(models.Model):

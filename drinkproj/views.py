@@ -23,9 +23,9 @@ def test_page(request):
 def home_page(request):
     events = Event.objects.all().order_by('-date')
     obj = Event.objects.all().order_by('-date')[0]
-    drinks = Event_Lineup.objects.filter(event_id=Event.objects.filter(id=obj.id))
-
-    return render(request,'drinkproj/homepage.html',{'events':events, 'obj':obj, 'drinks':drinks})
+    items = Event_Lineup.objects.filter(event_id=Event.objects.filter(id=obj.id))
+    print(items)
+    return render(request,'drinkproj/homepage.html',{'events':events, 'obj':obj, 'items':items})
 
 # Displays drinks per event
 def event_lineup(request,id):
@@ -44,41 +44,39 @@ def drink_info(request, id):
     ratings= Rating.objects.filter(post_date__lte=timezone.now()).order_by('-post_date')
     #Following allows user to rate drink and leave a comment
     form = RatingForm(request.POST or None)
+    ip_address= request.META['REMOTE_ADDR']
     # if request.method == "POST":
-    #     if form.is_valid():
-    #         rating=form.save(commit=False)
-    #         rating.ip_address = request.META['REMOTE_ADDR']#captures ip address of rater
-    #         rating.drink_id = id
-    #         rating.save()
-    #         return redirect('drink_info', id=drink.id)
+        # if form.is_valid():
+        #     rating=form.save(commit=False)
+        #     rating.ip_address = request.META['REMOTE_ADDR']#captures ip address of rater
+        #     rating.drink_id = id
+        #     rating.save()
+        #     return redirect('drink_info', id=drink.id)
 
-    return render(request, 'drinkproj/drink_info.html',{'drink':drink, 'form':form, 'ratings':ratings})
+    return render(request, 'drinkproj/drink_info.html',{'drink':drink, 'form':form, 'ratings':ratings, 'ip_address':ip_address})
 
 #json for related drink rating
 @api_view(['GET','POST'])
 def drink_comments(request, fk):
     print ('test1')
+    # import pdb
+    # pdb.set_trace()
     # http: // www.django - rest - framework.org / topics / html - and -forms /
-    # renderer_class = [TemplateHTMLRenderer]
     # template_name = 'drink_info.html'
     if request.method == 'GET':
         comments = Rating.objects.filter(drink_id=fk)
         serializer = RatingSerializer(comments, many=True)
         return Response(serializer.data)
 
-    # elif request.method == 'POST':
+
+    elif request.method == 'POST':
     #     comments = Rating.objects.filter(drink_id=fk)
-    #     serializer = RatingSerializer(data=request.data)
+        serializer = RatingSerializer(data=request.data)
     #     print('serializer')
-    #     # if serializer.is_valid():
-    #     #     serializer.save()
-    #     #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-    #     # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    #     if not serializer.is_valid():
-    #         print('not valid')
-    #         return Response(serializer.data)
-    #     serializer.save()
-    #     return redirect('drink_info')
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

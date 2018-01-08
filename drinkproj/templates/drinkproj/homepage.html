@@ -7,7 +7,9 @@
         <div class="upcoming_event col-xs-4">
             <h3>Upcoming Event</h3>
             <h4>{{ obj.event_name }}</h4>
-            <h5>{{ obj.id }}</h5>
+            {% for item in items %}
+                <h5>{{ item.drink }}</h5>
+            {% endfor %}
 
         </div>
         <div class="event_list col-xs-8">

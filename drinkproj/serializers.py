@@ -9,7 +9,7 @@ class DrinkSerializer(serializers.ModelSerializer):
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
-        fields = ('id','ip_address','comment','post_date','drink','rating_choices')
+        fields = ('id','ip_address','comment','post_date','drink','rating')
 
     def create(self, validated_data):
         """

@@ -37,3 +37,7 @@ img{
 .upcoming_event{
     border-style: dotted;
 }
+
+.rating_instance{
+    padding: 10px;
+}

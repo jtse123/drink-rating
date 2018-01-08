@@ -4,9 +4,13 @@
 
 
 {% block content %}
+    {# following class drink_id is used in app.js#}
+    <script class="drink_id">{{ drink.id }}</script>
+    <script class="ip">{{ ip_address }}</script>
+
     <div class="col-xs-12">
         <div class="drink">
-            {{ drink }}
+            <h2>{{ drink }}</h2>
         </div>
 
         {% if drink.image.url != None %}
@@ -14,17 +18,30 @@
         {% endif %}
 
 {#    currently this is a placeholder for rating. Rating will be the average of all combined ratings for specific drink#}
-        <h4>Rating: 5 out of 5 stars</h4>
-
-        <form method="POST" class="rate-form">{% csrf_token %}
-{#            <div>{{ form.as_p }}</div>#}
-{#            <button type="submit" class="save btn btn-default">Submit</button>#}
-{#            following is a test for submitting a form directly to rest framework#}
-{#            {% render_form serializer %}#}
-            <input type="submit" value="save">
-        </form>
-        <div ng-repeat="comment in comments_data">
-            <p>{$ comment.comment $}</p>
+        <h3>Rating: {$ avg_rating $} out of 5 stars</h3>
+{#        <form method="POST" class="rate-form">#}
+        <form ng-submit="submit()" ng-controller="ProjectController">
+            {% csrf_token %}
+            comment
+            <input type="text" ng-model="comment" name="comment" /><br>
+{#            drink#}
+{#            <input type="number" ng-model="drink" name="drink" /><br>#}
+            rating
+{#            <input type="number" ng-model="rating_choices" name="rating_choices" /><br>#}
+            <select ng-model="rating" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" id="submit" value="Submit" />
+        <div ng-repeat="comment in comments_data | orderBy: '-post_date'">
+            <div class="rating_instance">
+                <h4>{$ comment.rating $} out of 5 Stars</h4>
+                <p>{$ comment.comment $}</p>
+            </div>
         </div>
+        </form>
     </div>
 {% endblock %}

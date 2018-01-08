@@ -26,7 +26,7 @@ SECRET_KEY = 'f6nt=1@u*mg3goy-@nw(k)n$m^vhf8op*vu53o$+3ge*a)1e*v'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'johnathan.tse',]
-
+APPEND_SLASH = True
 
 # Application definition
 
@@ -133,3 +133,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #Needed to show images in website
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
