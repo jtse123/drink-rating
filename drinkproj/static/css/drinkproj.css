@@ -22,7 +22,7 @@ img{
 .event_list{
     text-align:center;
     font-size: 30px;
-    color: black;
+    color: black !important;
 }
 
 /*.homepage{*/
@@ -40,4 +40,7 @@ img{
 
 .rating_instance{
     padding: 10px;
+}
+a {
+    color: initial;
 }

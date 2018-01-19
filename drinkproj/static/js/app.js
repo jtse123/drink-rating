@@ -14,8 +14,14 @@
          $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
      }]);
 
+    // Disable default angular themes and use css stylings instead
+    app.config(function($mdThemingProvider) {
+        $mdThemingProvider.disableTheming();
+        });
+
     app.controller('ProjectController', function ($http, $scope) {
         $scope.comments_data = [];
+
 
         // finds drink id of page and then calls a get request to that specific json
         var drink = document.getElementsByClassName("drink_id")[0];
