@@ -40,8 +40,8 @@ def event_lineup(request,id):
 #displays drink, its related info, and allows user to rate drink instance
 def drink_info(request, id):
     drink = get_object_or_404(Drink,id=id)
-    print (drink.id)
     ratings= Rating.objects.filter(post_date__lte=timezone.now()).order_by('-post_date')
+
     #Following allows user to rate drink and leave a comment
     form = RatingForm(request.POST or None)
     ip_address= request.META['REMOTE_ADDR']

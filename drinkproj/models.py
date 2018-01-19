@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from sorl.thumbnail import ImageField
 
 # Create your models here.
 class DrinkType(models.Model):
@@ -13,7 +14,9 @@ class Drink(models.Model):
     id = models.AutoField(primary_key=True)
     drink_name = models.CharField(max_length=200)
     type = models.ForeignKey(DrinkType, on_delete=models.CASCADE)
-    image = models.ImageField(blank=True, null=True)
+    url_height = models.PositiveIntegerField()
+    url_width = models.PositiveIntegerField()
+    image = ImageField(blank=True, null=True, height_field='url_height', width_field='url_width')
 
     def __str__(self):
         return self.drink_name

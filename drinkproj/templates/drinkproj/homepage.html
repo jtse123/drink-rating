@@ -6,9 +6,9 @@
     <div class="row">
         <div class="upcoming_event col-xs-4">
             <h3>Upcoming Event</h3>
-            <h4>{{ obj.event_name }}</h4>
+            <h4><a href="{% url 'event_detail' id=obj.id %}">{{ obj.event_name }}</a></h4>
             {% for item in items %}
-                <h5>{{ item.drink }}</h5>
+                <h5><a href="{% url 'drink_info' id=item.drink_id %}">{{ item.drink }}</a></h5>
             {% endfor %}
 
         </div>

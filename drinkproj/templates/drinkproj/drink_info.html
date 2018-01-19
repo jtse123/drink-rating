@@ -1,6 +1,7 @@
 {% extends 'drinkproj/base.html' %}
 {% load staticfiles %}
-{%  load rest_framework %}
+{% load rest_framework %}
+{% load thumbnail %}
 
 
 {% block content %}
@@ -12,22 +13,25 @@
         <div class="drink">
             <h2>{{ drink }}</h2>
         </div>
-
+    <div class="drink_thumb">
         {% if drink.image.url != None %}
             <img src="{{ drink.image.url }}"/>
+{#            {% thumbnail drink.image "100x100" as im %}#}
+{#                <img src="{{ im.url }}" width="{{ im.url_width }}" height="{{ im.url_height }}"/>#}
+{#            {% endthumbnail %}#}
         {% endif %}
+    </div>
 
-{#    currently this is a placeholder for rating. Rating will be the average of all combined ratings for specific drink#}
-        <h3>Rating: {$ avg_rating $} out of 5 stars</h3>
-{#        <form method="POST" class="rate-form">#}
+{#Displays rating#}
+        <h3 ng-show="numOfRatings > 0">Rating: {$ avg_rating $} out of 5 stars</h3>
+
+        <p>{$ numOfRatings $} reviews</p>
+
         <form ng-submit="submit()" ng-controller="ProjectController">
             {% csrf_token %}
             comment
             <input type="text" ng-model="comment" name="comment" /><br>
-{#            drink#}
-{#            <input type="number" ng-model="drink" name="drink" /><br>#}
             rating
-{#            <input type="number" ng-model="rating_choices" name="rating_choices" /><br>#}
             <select ng-model="rating" name="rating">
                 <option value="1">1</option>
                 <option value="2">2</option>
