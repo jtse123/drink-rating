@@ -1,7 +1,4 @@
-/**{*/
-    /*border-style:dotted;*/
-/*}*/
-
+/*Base.html*/
 .base_title{
     font-size: 36pt;
     background-color: lightskyblue;
@@ -57,7 +54,18 @@ a {
 a.md-default-theme:not(.md-button), a:not(.md-button) {
     color: #204d74;
 }
-#rating_style{
+
+
+/*drink info styling*/
+#overall_rating{
     font-weight: bold;
-    font-size: 25px;
+}
+
+#rating_style{
+    font-size: 20px;
+}
+
+.container-fluid{
+    padding-left: 100px;
+    padding-right: 100px;
 }

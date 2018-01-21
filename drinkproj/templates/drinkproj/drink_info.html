@@ -9,26 +9,38 @@
     <script class="drink_id">{{ drink.id }}</script>
     <script class="ip">{{ ip_address }}</script>
 
-    <div class="col-xs-12 standard_font">
-        <div class="drink">
-            <h2>{{ drink }}</h2>
+{#    Folowing div displays drink thumbnail and overall rating#}
+    <div class="container-fluid">
+    <div class="col-xs-6">
+        <div class="standard_font">
+            <div class="drink">
+                <h2>{{ drink }}</h2>
+            </div>
         </div>
-    <div class="drink_thumb">
-        {% if drink.image.url != None %}
-            <img src="{{ drink.image.url }}"/>
+        <div class="drink_thumb">
+            {% if drink.image.url != None %}
+                <img src="{{ drink.image.url }}"/>
+{#            trying to make images into a standard thumbnail size#}
 {#            {% thumbnail drink.image "100x100" as im %}#}
 {#                <img src="{{ im.url }}" width="{{ im.url_width }}" height="{{ im.url_height }}"/>#}
 {#            {% endthumbnail %}#}
-        {% endif %}
-    </div>
+            {% endif %}
+        </div>
 
 {#Displays rating#}
-    <div class="standard_font">
-        <h3 ng-show="numOfRatings > 0">Rating: {$ avg_rating $} out of 5 stars</h3>
+        <div class="standard_font">
+            <h2 id="overall_rating" ng-show="numOfRatings > 0">Rating: {$ avg_rating $} out of 5 stars</h2>
 
-        <p>{$ numOfRatings $} reviews</p>
+            <p>{$ numOfRatings $} reviews</p>
+        </div>
     </div>
-        <form ng-submit="submit()" ng-controller="ProjectController">
+{#    displays drink description and manufacturer#}
+    <div class="col-xs-6">
+        <h3>Manufacturer: {{ drink.manufacturer }}</h3>
+        <h4>Description: {{ drink.description }}</h4>
+
+    </div>
+        <form class= col-xs-12 ng-submit="submit()" ng-controller="ProjectController">
             {% csrf_token %}
             comment
             <input type="text" ng-model="comment" name="comment" /><br>
@@ -43,10 +55,11 @@
             <input type="submit" id="submit" value="Submit" />
         <div ng-repeat="comment in comments_data | orderBy: '-post_date'">
             <div class="rating_instance">
-                <h4 id="rating_style">{$ comment.rating $} out of 5 Stars</h4>
+                <h6 id="rating_style">{$ comment.rating $} out of 5 Stars</h6>
                 <p id ="comment_style">{$ comment.comment $}</p>
             </div>
         </div>
         </form>
+    </div>
     </div>
 {% endblock %}
