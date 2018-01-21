@@ -3,13 +3,13 @@
 
 {% block content %}
     <div class="col-xs-8">
-        <h1>{{ event.event_name }}</h1>
+        <h1 class="standard_font">{{ event.event_name }}</h1>
     </div>
 {#    <div class="col-md-4">#}
 {#        <a href="{% url 'rate' id=event.id %}">Rate Drinks</a>#}
 {#    </div>#}
 
-    <div class="col-xs-8">
+    <div class="drink_list col-xs-8">
     {% for item in items %}
         <h4 class="item">{{ item.drink }}</h4>
         <a href="{% url 'drink_info' id=item.drink_id %}">Rate</a>

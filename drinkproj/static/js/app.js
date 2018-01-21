@@ -15,9 +15,9 @@
      }]);
 
     // Disable default angular themes and use css stylings instead
-    app.config(function($mdThemingProvider) {
-        $mdThemingProvider.disableTheming();
-        });
+    // app.config(function($mdThemingProvider) {
+    //     $mdThemingProvider.disableTheming();
+    //     });
 
     app.controller('ProjectController', function ($http, $scope) {
         $scope.comments_data = [];

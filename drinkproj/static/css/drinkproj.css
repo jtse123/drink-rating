@@ -7,12 +7,16 @@
     background-color: lightskyblue;
     text-align: center;
     padding: 10px;
+    font-family: "Bodoni 72 Oldstyle";
 }
 
 .logo{
-    /*background-color: blue;*/
     padding: 9px;
 
+}
+
+.standard_font{
+    font-family: "Bodoni 72 Oldstyle";
 }
 
 img{
@@ -22,12 +26,9 @@ img{
 .event_list{
     text-align:center;
     font-size: 30px;
+    font-family: "Bodoni 72 Oldstyle";
     color: black !important;
 }
-
-/*.homepage{*/
-    /*background-color: lightgreen;*/
-/*}*/
 
 #event{
     background-color: powderblue;
@@ -43,4 +44,20 @@ img{
 }
 a {
     color: initial;
+}
+
+.mostRecentEvent{
+    color: #1b8dbb;
+}
+
+.drink_list{
+    font-family: "Bodoni 72 Oldstyle";
+}
+
+a.md-default-theme:not(.md-button), a:not(.md-button) {
+    color: #204d74;
+}
+#rating_style{
+    font-weight: bold;
+    font-size: 25px;
 }

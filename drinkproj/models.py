@@ -17,6 +17,8 @@ class Drink(models.Model):
     url_height = models.PositiveIntegerField()
     url_width = models.PositiveIntegerField()
     image = ImageField(blank=True, null=True, height_field='url_height', width_field='url_width')
+    manufacturer = models.CharField(max_length=200, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.drink_name

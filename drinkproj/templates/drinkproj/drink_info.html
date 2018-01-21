@@ -9,7 +9,7 @@
     <script class="drink_id">{{ drink.id }}</script>
     <script class="ip">{{ ip_address }}</script>
 
-    <div class="col-xs-12">
+    <div class="col-xs-12 standard_font">
         <div class="drink">
             <h2>{{ drink }}</h2>
         </div>
@@ -23,10 +23,11 @@
     </div>
 
 {#Displays rating#}
+    <div class="standard_font">
         <h3 ng-show="numOfRatings > 0">Rating: {$ avg_rating $} out of 5 stars</h3>
 
         <p>{$ numOfRatings $} reviews</p>
-
+    </div>
         <form ng-submit="submit()" ng-controller="ProjectController">
             {% csrf_token %}
             comment
@@ -42,8 +43,8 @@
             <input type="submit" id="submit" value="Submit" />
         <div ng-repeat="comment in comments_data | orderBy: '-post_date'">
             <div class="rating_instance">
-                <h4>{$ comment.rating $} out of 5 Stars</h4>
-                <p>{$ comment.comment $}</p>
+                <h4 id="rating_style">{$ comment.rating $} out of 5 Stars</h4>
+                <p id ="comment_style">{$ comment.comment $}</p>
             </div>
         </div>
         </form>
