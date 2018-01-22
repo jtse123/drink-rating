@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils import timezone
-from sorl.thumbnail import ImageField
+from PIL import Image
+#from sorl.thumbnail import ImageField
 
+#size of imagefield
+size = (200,200)
 # Create your models here.
 class DrinkType(models.Model):
     id = models.AutoField(primary_key=True)
@@ -14,14 +17,31 @@ class Drink(models.Model):
     id = models.AutoField(primary_key=True)
     drink_name = models.CharField(max_length=200)
     type = models.ForeignKey(DrinkType, on_delete=models.CASCADE)
-    url_height = models.PositiveIntegerField()
-    url_width = models.PositiveIntegerField()
-    image = ImageField(blank=True, null=True, height_field='url_height', width_field='url_width')
+    url_height = models.PositiveIntegerField(default= 200, editable=False)
+    url_width = models.PositiveIntegerField(default=200, editable=False)
+    image = models.ImageField(blank=True,
+                              null=True,
+                              #height_field='url_height',
+                              #width_field='url_width'
+                              )
+    #image.resize(size, Image.ANTIALIAS)
+
     manufacturer = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.drink_name
+
+    def save(self):
+        if not self.image:
+            return
+        super(Drink,self).save()
+        image = Image.open(self.image)
+        size = (200,200)
+        image = image.resize(size, Image.ANTIALIAS)
+        image.save(self.image.path)
+
+
 
 class Event(models.Model):
     id = models.AutoField(primary_key=True)

@@ -64,8 +64,3 @@ a.md-default-theme:not(.md-button), a:not(.md-button) {
 #rating_style{
     font-size: 20px;
 }
-
-.container-fluid{
-    padding-left: 100px;
-    padding-right: 100px;
-}
