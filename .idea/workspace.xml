@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="552ac813-9e70-4f3c-b918-8eacd66ba05d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/coke.jpeg" afterPath="$PROJECT_DIR$/media/coke.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/root-beer-float.png" afterPath="$PROJECT_DIR$/media/root-beer-float.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/models.py" afterPath="$PROJECT_DIR$/drinkproj/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/static/css/drinkproj.css" afterPath="$PROJECT_DIR$/drinkproj/static/css/drinkproj.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/templates/drinkproj/drink_info.html" afterPath="$PROJECT_DIR$/drinkproj/templates/drinkproj/drink_info.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+            <state relative-caret-position="338">
+              <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -54,6 +54,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="415">
               <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -72,7 +82,7 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
+            <state relative-caret-position="-190">
               <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding />
             </state>
@@ -93,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/media/test_image.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -200,6 +210,19 @@
             <path>
               <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
               <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
+              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
+              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
+              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -700,14 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/event_lineup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -737,14 +752,6 @@
     <entry file="file://$PROJECT_DIR$/images/coke.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html">
@@ -784,7 +791,7 @@
     <entry file="file://$PROJECT_DIR$/media/test_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -814,11 +821,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+        <state relative-caret-position="338">
+          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

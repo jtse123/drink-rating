@@ -3,8 +3,6 @@ from django.utils import timezone
 from PIL import Image
 #from sorl.thumbnail import ImageField
 
-#size of imagefield
-size = (200,200)
 # Create your models here.
 class DrinkType(models.Model):
     id = models.AutoField(primary_key=True)
@@ -21,10 +19,7 @@ class Drink(models.Model):
     url_width = models.PositiveIntegerField(default=200, editable=False)
     image = models.ImageField(blank=True,
                               null=True,
-                              #height_field='url_height',
-                              #width_field='url_width'
                               )
-    #image.resize(size, Image.ANTIALIAS)
 
     manufacturer = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -47,7 +42,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     event_name = models.CharField(max_length=200)
     date = models.DateTimeField()
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
