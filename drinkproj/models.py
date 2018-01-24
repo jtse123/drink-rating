@@ -52,7 +52,7 @@ class Rating(models.Model):
     id = models.AutoField(primary_key=True)
     # ip_address = models.GenericIPAddressField(protocol='both')
     ip_address = models.CharField(max_length=120)
-    comment= models.TextField(null=True, blank=True)
+    comment= models.TextField(null=True, blank=True, default='')
     post_date = models.DateTimeField(default=timezone.now)
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
 
@@ -63,6 +63,10 @@ class Rating(models.Model):
               (4, '4'),
               (5, '5'))
     rating = models.IntegerField(max_length=20, choices=rating_choices)
+
+    def update(self,comment,rating):
+        self.comment= comment
+        self.rating= rating
 
 #Determines what drinks an event has
 class Event_Lineup(models.Model):

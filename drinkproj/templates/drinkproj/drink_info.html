@@ -6,8 +6,8 @@
 
 {% block content %}
     {# following class drink_id is used in app.js#}
-    <script class="drink_id">{{ drink.id }}</script>
-    <script class="ip">{{ ip_address }}</script>
+    <span class="drink_id" style = "display:none">{{ drink.id }}</span>
+    <span class="ip"style="display:none">{{ ip_address }}</span>
 
 {#    Folowing div displays drink thumbnail and overall rating#}
     <div class="container-fluid drink_info_container">
@@ -20,16 +20,12 @@
         <div class="drink_thumb">
             {% if drink.image.url != None %}
                 <img src="{{ drink.image.url }}"/>
-{#            trying to make images into a standard thumbnail size#}
-{#            {% thumbnail drink.image "100x100" as im %}#}
-{#                <img src="{{ im.url }}" width="{{ im.url_width }}" height="{{ im.url_height }}"/>#}
-{#            {% endthumbnail %}#}
             {% endif %}
         </div>
 
 {#Displays rating#}
         <div class="standard_font">
-            <h2 id="overall_rating" ng-show="numOfRatings > 0">Rating: {$ avg_rating $} out of 5 stars</h2>
+            <h2 ng-controller="ProjectController" id="overall_rating" ng-show="numOfRatings > 0">Rating: {$ avg_rating $} of 5 stars</h2>
 
             <p>{$ numOfRatings $} reviews</p>
         </div>
@@ -40,7 +36,13 @@
         <h4>Description: {{ drink.description }}</h4>
 
     </div>
-        <form class= col-xs-12 ng-submit="submit()" ng-controller="ProjectController">
+{#    post method for angularjs(front end)#}
+{#    to make work, uncomment this form_method and comment out the other one#}
+{#    then comment back in hte submit function in app.js and comment out the try/except method in views.py api_views#}
+{#        <form method="post" class= col-xs-12 ng-submit="submit()" ng-controller="ProjectController">#}
+
+{#    Post method for view (backend)#}
+    <form method="post" class="col-xs-12" ng-submit="submit()" ng-controller="ProjectController">
             {% csrf_token %}
             comment
             <input type="text" ng-model="comment" name="comment" /><br>

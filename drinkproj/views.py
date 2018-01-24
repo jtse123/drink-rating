@@ -58,9 +58,6 @@ def drink_info(request, id):
 #json for related drink rating
 @api_view(['GET','POST'])
 def drink_comments(request, fk):
-    print ('test1')
-    # import pdb
-    # pdb.set_trace()
     # http: // www.django - rest - framework.org / topics / html - and -forms /
     # template_name = 'drink_info.html'
     if request.method == 'GET':
@@ -70,13 +67,42 @@ def drink_comments(request, fk):
 
 
     elif request.method == 'POST':
+
+        print('request.data: ')
+
+        print(request.META['REMOTE_ADDR'])
     #     comments = Rating.objects.filter(drink_id=fk)
+
         serializer = RatingSerializer(data=request.data)
-    #     print('serializer')
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        print(serializer)
+        try:
+            rating = Rating.objects.get(ip_address=request.META['REMOTE_ADDR'], drink_id=Drink.objects.get(id=fk))
+            # pdb.set_trace()
+
+            # rating.update(comment=request.data['comment']
+            #               , rating=request.data['rating']
+            #               )
+            rating.comment = request.data['comment']
+            rating.rating = request.data['rating']
+            rating.save()
+            # pdb.set_trace()
+        except Rating.DoesNotExist:
+            # pdb.set_trace()
+            rating = Rating.objects.create(
+            ip_address=request.META['REMOTE_ADDR'],
+            rating= request.data['rating'],
+            comment=request.data['comment'],
+            drink= Drink.objects.get(id=fk)
+            )
+            print(rating)
+            rating.save()
+
+        finally:
+            # pdb.set_trace()
+            comments = Rating.objects.filter(drink_id=fk)
+            serializer = RatingSerializer(comments, many=True)
+            return Response(serializer.data)
+
 
 
 
