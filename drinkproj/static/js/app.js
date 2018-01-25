@@ -43,7 +43,7 @@
             // find average of rating and round to nearest 0.5 decimal place
             $scope.avg_rating = $scope.rating_sum/$scope.comments_data.length;
             $scope.avg_rating = (Math.round($scope.avg_rating*2)/2);
-            // console.log($scope.avg_rating);
+            console.log($scope.avg_rating);
         });
 
 
@@ -56,17 +56,22 @@
                     })
                     .then(function successCallback(data){
                         $scope.comments_data = data.data;
-                        console.log(data);
+                        console.log(data.data);
                         $scope.rating_sum = 0;
                         $scope.numOfRatings = $scope.comments_data.length;
             // calculates sum of all ratings
-                    for (i=0;i<$scope.comments_data.length; i++) {
-                        $scope.rating_sum += $scope.comments_data[i].rating;
-                    }
+                        for (i=0;i<$scope.comments_data.length; i++) {
+                            $scope.rating_sum += $scope.comments_data[i].rating;
+                            }
             // find average of rating and round to nearest 0.5 decimal place
-                $scope.avg_rating = $scope.rating_sum/$scope.comments_data.length;
-                $scope.avg_rating = (Math.round($scope.avg_rating*2)/2);
-                    })
+                        $scope.avg_rating = $scope.rating_sum/$scope.comments_data.length;
+                        $scope.avg_rating = (Math.round($scope.avg_rating*2)/2);
+                        console.log($scope.avg_rating)
+                    },
+                function errorCallback(){
+                    console.log('it failed =(');
+                })
+
             }
 
          // $scope.submit = function() {

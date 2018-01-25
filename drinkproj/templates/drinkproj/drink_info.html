@@ -9,6 +9,13 @@
     <span class="drink_id" style = "display:none">{{ drink.id }}</span>
     <span class="ip"style="display:none">{{ ip_address }}</span>
 
+    {#    displays drink description and manufacturer#}
+    <div class="col-xs-6">
+        <h3>Manufacturer: {{ drink.manufacturer }}</h3>
+        <h4>Description: {{ drink.description }}</h4>
+
+    </div>
+
 {#    Folowing div displays drink thumbnail and overall rating#}
     <div class="container-fluid drink_info_container">
     <div class="col-xs-6">
@@ -24,28 +31,26 @@
         </div>
 
 {#Displays rating#}
+{#        <form method="post" class="col-xs-12" ng-submit="submit()" ng-controller="ProjectController">#}
+{#            {% csrf_token %}#}
+    <div ng-controller="ProjectController">
         <div class="standard_font">
-            <h2 ng-controller="ProjectController" id="overall_rating" ng-show="numOfRatings > 0">Rating: {$ avg_rating $} of 5 stars</h2>
+            <h2 id="overall_rating" ng-show="numOfRatings > 0">Rating: {$ avg_rating $} of 5 stars</h2>
 
             <p>{$ numOfRatings $} reviews</p>
         </div>
-    </div>
-{#    displays drink description and manufacturer#}
-    <div class="col-xs-6">
-        <h3>Manufacturer: {{ drink.manufacturer }}</h3>
-        <h4>Description: {{ drink.description }}</h4>
 
-    </div>
+
 {#    post method for angularjs(front end)#}
 {#    to make work, uncomment this form_method and comment out the other one#}
 {#    then comment back in hte submit function in app.js and comment out the try/except method in views.py api_views#}
 {#        <form method="post" class= col-xs-12 ng-submit="submit()" ng-controller="ProjectController">#}
 
 {#    Post method for view (backend)#}
-    <form method="post" class="col-xs-12" ng-submit="submit()" ng-controller="ProjectController">
+    <form method="post" class="col-xs-12" ng-submit="submit()">
             {% csrf_token %}
             comment
-            <input type="text" ng-model="comment" name="comment" /><br>
+            <input type="text" ng-model="comment" name="comment" ng-init="comment=''" /><br>
             rating
             <select ng-model="rating" name="rating">
                 <option value="1">1</option>
@@ -55,13 +60,18 @@
                 <option value="5">5</option>
             </select>
             <input type="submit" id="submit" value="Submit" />
+    </form>
+
+{#        Display comments#}
         <div ng-repeat="comment in comments_data | orderBy: '-post_date'">
             <div class="rating_instance">
                 <h6 id="rating_style">{$ comment.rating $} out of 5 Stars</h6>
                 <p id ="comment_style">{$ comment.comment $}</p>
             </div>
         </div>
-        </form>
+
     </div>
     </div>
+    </div>
+
 {% endblock %}

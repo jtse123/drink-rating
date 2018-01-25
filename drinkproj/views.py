@@ -68,22 +68,27 @@ def drink_comments(request, fk):
 
     elif request.method == 'POST':
 
-        print('request.data: ')
-
-        print(request.META['REMOTE_ADDR'])
     #     comments = Rating.objects.filter(drink_id=fk)
 
-        serializer = RatingSerializer(data=request.data)
-        print(serializer)
+        # serializer = RatingSerializer(data=request.data)
+        # print(serializer)
+        import pdb
         try:
+
             rating = Rating.objects.get(ip_address=request.META['REMOTE_ADDR'], drink_id=Drink.objects.get(id=fk))
             # pdb.set_trace()
+            # print(rating.comment)
+            # print(request.data['comment'])
+            # pdb.set_trace()
+            print(request.data['comment'])
 
             # rating.update(comment=request.data['comment']
             #               , rating=request.data['rating']
             #               )
+
             rating.comment = request.data['comment']
             rating.rating = request.data['rating']
+            print(rating.comment)
             rating.save()
             # pdb.set_trace()
         except Rating.DoesNotExist:
@@ -94,16 +99,14 @@ def drink_comments(request, fk):
             comment=request.data['comment'],
             drink= Drink.objects.get(id=fk)
             )
-            print(rating)
             rating.save()
 
         finally:
             # pdb.set_trace()
             comments = Rating.objects.filter(drink_id=fk)
             serializer = RatingSerializer(comments, many=True)
+            print(serializer)
             return Response(serializer.data)
-
-
 
 
 #json rest framework for all ratings
@@ -118,10 +121,10 @@ def ratings_list(request):
 
     elif request == 'POST':
         serializer = RatingSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 #json file test

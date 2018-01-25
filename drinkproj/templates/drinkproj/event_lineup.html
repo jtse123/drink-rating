@@ -14,7 +14,8 @@
         <h4 class="item">{{ item.drink }}</h4>
         <a href="{% url 'drink_info' id=item.drink_id %}">Rate</a>
         {% if item.drink.image.url != None %}
-            <img src="{{ item.drink.image.url }}"/>
+            <a href="{% url 'drink_info' id=item.drink_id %}">
+                <img src="{{ item.drink.image.url }}"/></a>
         {% endif %}
     {% endfor %}
     </div>
