@@ -10,6 +10,11 @@
     border-style: groove;
 }
 
+#event img{
+    max-width: 80%;
+    height: auto;
+}
+
 .upcoming_event{
     border-style: dotted;
 }

@@ -16,7 +16,8 @@
         {% for event in events %}
             <div class="jumbotron" id="event">
                 {% if event.image.url != None %}
-                    <img src="{{ event.image.url }}"/>
+                    <a href="{% url 'event_detail' id=event.id  %}">
+                    <img src="{{ event.image.url }}"/></a>
                 {% endif %}
                 <h2><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h2>
                 <h4>{{ event.date }}</h4>

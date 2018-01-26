@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="552ac813-9e70-4f3c-b918-8eacd66ba05d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/models.py" afterPath="$PROJECT_DIR$/drinkproj/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/static/css/base_page.css" afterPath="$PROJECT_DIR$/drinkproj/static/css/base_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/static/css/drink_info_page.css" afterPath="$PROJECT_DIR$/drinkproj/static/css/drink_info_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/static/css/drinkproj.css" afterPath="$PROJECT_DIR$/drinkproj/static/css/drinkproj.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html" afterPath="$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/static/css/homepage.css" afterPath="$PROJECT_DIR$/drinkproj/static/css/homepage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html" afterPath="$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="9" column="77" lean-forward="true" selection-start-line="8" selection-start-column="71" selection-end-line="9" selection-end-column="77" />
+              <caret line="9" column="77" lean-forward="false" selection-start-line="8" selection-start-column="71" selection-end-line="9" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -76,7 +72,7 @@
       <file leaf-file-name="drink_info_page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/static/css/drink_info_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
+            <state relative-caret-position="454">
               <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
@@ -86,18 +82,18 @@
       <file leaf-file-name="drinkproj.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/static/css/drinkproj.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="210">
               <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/static/css/homepage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -106,8 +102,18 @@
       <file leaf-file-name="base_page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/static/css/base_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -116,21 +122,9 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="270">
+              <caret line="18" column="68" lean-forward="true" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#640#672#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -139,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/drink_info.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -206,11 +200,11 @@
         <option value="$PROJECT_DIR$/drinkproj/templates/drinkproj/event_lineup.html" />
         <option value="$PROJECT_DIR$/drinkproj/static/css/base_page.css" />
         <option value="$PROJECT_DIR$/drinkproj/models.py" />
-        <option value="$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html" />
         <option value="$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html" />
         <option value="$PROJECT_DIR$/drinkproj/static/css/drink_info_page.css" />
-        <option value="$PROJECT_DIR$/drinkproj/static/css/homepage.css" />
         <option value="$PROJECT_DIR$/drinkproj/static/css/drinkproj.css" />
+        <option value="$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html" />
+        <option value="$PROJECT_DIR$/drinkproj/static/css/homepage.css" />
       </list>
     </option>
   </component>
@@ -265,20 +259,7 @@
               <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
               <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
-              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drink_rating_dir" type="462c0819:PsiDirectoryNode" />
-              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="drinkproj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="drink_rating_dir" type="b2602c69:ProjectViewProjectNode" />
@@ -755,14 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -829,7 +802,7 @@
     <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/drink_info.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -842,25 +815,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/static/css/base_page.css">
+    <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="95">
+          <caret line="9" column="77" lean-forward="false" selection-start-line="8" selection-start-column="71" selection-end-line="9" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/base.html">
+    <entry file="file://$PROJECT_DIR$/drinkproj/static/css/drinkproj.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="9" column="77" lean-forward="true" selection-start-line="8" selection-start-column="71" selection-end-line="9" selection-end-column="77" />
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drinkproj/static/css/base_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/static/css/drink_info_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
+        <state relative-caret-position="454">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
@@ -868,24 +849,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/templates/drinkproj/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/drinkproj/static/css/drinkproj.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="270">
+          <caret line="18" column="68" lean-forward="true" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/drinkproj/static/css/homepage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drinkproj/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>
