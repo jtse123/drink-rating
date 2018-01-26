@@ -4,7 +4,7 @@
 {% block content %}
     <div class="homepage">
     <div class="row">
-        <div class="upcoming_event col-sm-4 col-xs-12">
+        <div class="upcoming_event standard_font col-sm-4 col-xs-12">
             <h3 class="mostRecentEvent">Upcoming Event</h3>
             <h4 id="sidebar_event"><a href="{% url 'event_detail' id=obj.id %}">{{ obj.event_name }}</a></h4>
             {% for item in items %}
