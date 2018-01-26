@@ -1,0 +1,39 @@
+.event_list{
+    text-align:center;
+    font-size: 30px;
+    font-family: "Bodoni 72 Oldstyle";
+    color: black !important;
+}
+
+#event{
+    /*background-color: powderblue;*/
+    border-style: groove;
+}
+
+.upcoming_event{
+    border-style: dotted;
+}
+
+
+.event_description{
+    font-size: calc(12px + 0.6vw);
+}
+
+/*sidebar*/
+.mostRecentEvent{
+    color: #1b8dbb;
+    font-size: calc(21px + 0.09vw);
+}
+
+#sidebar_event{
+    font-size: calc(16px + 0.09vw);
+
+}
+
+#sidebar_drink{
+    font-size: calc(14px + 0.09vw);
+}
+
+.drink_list{
+    font-family: "Bodoni 72 Oldstyle";
+}

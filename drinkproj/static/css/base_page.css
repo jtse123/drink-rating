@@ -2,6 +2,7 @@
 .base_title{
     font-size: 36pt;
     background-color: lightskyblue;
+    border-style: outset;
     text-align: center;
     padding: 10px;
     font-family: "Bodoni 72 Oldstyle";

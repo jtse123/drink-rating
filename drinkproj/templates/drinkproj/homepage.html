@@ -15,6 +15,9 @@
         <div class="event_list col-sm-8 col-xs-12">
         {% for event in events %}
             <div class="jumbotron" id="event">
+                {% if event.image.url != None %}
+                    <img src="{{ event.image.url }}"/>
+                {% endif %}
                 <h2><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h2>
                 <h4>{{ event.date }}</h4>
                 <h5 class="event_description">{{ event.description }}</h5>

@@ -49,6 +49,16 @@ class Event(models.Model):
     def __str__(self):
         return self.event_name
 
+    def save(self):
+        if not self.image:
+            return
+        super(Event,self).save()
+        image = Image.open(self.image)
+        size = (200,200)
+        image = image.resize(size, Image.ANTIALIAS)
+        image.save(self.image.path)
+
+
 class Rating(models.Model):
     id = models.AutoField(primary_key=True)
     # ip_address = models.GenericIPAddressField(protocol='both')
