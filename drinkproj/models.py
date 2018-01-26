@@ -27,6 +27,7 @@ class Drink(models.Model):
     def __str__(self):
         return self.drink_name
 
+# Resizes image to a standard size
     def save(self):
         if not self.image:
             return
@@ -64,9 +65,6 @@ class Rating(models.Model):
               (5, '5'))
     rating = models.IntegerField(max_length=20, choices=rating_choices)
 
-    # def update(self,comment,rating):
-    #     self.comment= comment
-    #     self.rating= rating
 
 #Determines what drinks an event has
 class Event_Lineup(models.Model):

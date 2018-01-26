@@ -10,18 +10,18 @@
     <span class="ip"style="display:none">{{ ip_address }}</span>
 
     {#    displays drink description and manufacturer#}
-    <div class="col-xs-6">
-        <h3>Manufacturer: {{ drink.manufacturer }}</h3>
-        <h4>Description: {{ drink.description }}</h4>
+    <div class="col-sm-6 col-xs-12">
+        <h3 id="manufacturer">Manufacturer: {{ drink.manufacturer }}</h3>
+        <h4 id="drink_description">Description: {{ drink.description }}</h4>
 
     </div>
 
 {#    Folowing div displays drink thumbnail and overall rating#}
     <div class="container-fluid drink_info_container">
-    <div class="col-xs-6">
+    <div class="col-sm-6 col-xs-12">
         <div class="standard_font">
             <div class="drink">
-                <h2>{{ drink }}</h2>
+                <h2 class="drink_name">{{ drink.drink_name }}</h2>
             </div>
         </div>
         <div class="drink_thumb">

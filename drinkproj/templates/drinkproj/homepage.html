@@ -4,19 +4,20 @@
 {% block content %}
     <div class="homepage">
     <div class="row">
-        <div class="upcoming_event col-xs-4">
+        <div class="upcoming_event col-sm-4 col-xs-12">
             <h3 class="mostRecentEvent">Upcoming Event</h3>
-            <h4><a href="{% url 'event_detail' id=obj.id %}">{{ obj.event_name }}</a></h4>
+            <h4 id="sidebar_event"><a href="{% url 'event_detail' id=obj.id %}">{{ obj.event_name }}</a></h4>
             {% for item in items %}
-                <h5><a href="{% url 'drink_info' id=item.drink_id %}">{{ item.drink }}</a></h5>
+                <h5 id="sidebar_drink"><a href="{% url 'drink_info' id=item.drink_id %}">{{ item.drink }}</a></h5>
             {% endfor %}
 
         </div>
-        <div class="event_list col-xs-8">
+        <div class="event_list col-sm-8 col-xs-12">
         {% for event in events %}
             <div class="jumbotron" id="event">
                 <h2><a href="{% url 'event_detail' id=event.id %}">{{ event.event_name }}</a></h2>
-                <h4>{{ event.description }}</h4>
+                <h4>{{ event.date }}</h4>
+                <h5 class="event_description">{{ event.description }}</h5>
             </div>
 
         {% endfor %}

@@ -1,24 +1,14 @@
-/*Base.html*/
-.base_title{
-    font-size: 36pt;
-    background-color: lightskyblue;
-    text-align: center;
-    padding: 10px;
-    font-family: "Bodoni 72 Oldstyle";
-}
-
-.logo{
-    padding: 9px;
-
-}
+/*makes images scale with screen size*/
+/*img {*/
+    /*max-width: 100%;*/
+    /*height: auto;*/
+    /*vertical-align: top;*/
+/*}*/
 
 .standard_font{
     font-family: "Bodoni 72 Oldstyle";
 }
 
-img{
-    vertical-align: top;
-}
 
 .event_list{
     text-align:center;
@@ -28,12 +18,17 @@ img{
 }
 
 #event{
-    background-color: powderblue;
-    border-style: ridge;
+    /*background-color: powderblue;*/
+    border-style: groove;
 }
 
 .upcoming_event{
     border-style: dotted;
+}
+
+
+.event_description{
+    font-size: calc(12px + 0.6vw);
 }
 
 .rating_instance{
@@ -43,8 +38,19 @@ a {
     color: initial;
 }
 
+/*sidebar*/
 .mostRecentEvent{
     color: #1b8dbb;
+    font-size: calc(21px + 0.09vw);
+}
+
+#sidebar_event{
+    font-size: calc(16px + 0.09vw);
+
+}
+
+#sidebar_drink{
+    font-size: calc(14px + 0.09vw);
 }
 
 .drink_list{
@@ -56,11 +62,8 @@ a.md-default-theme:not(.md-button), a:not(.md-button) {
 }
 
 
-/*drink info styling*/
-#overall_rating{
-    font-weight: bold;
+@media screen and (max-width: 767px) {
+    .upcoming_event{
+        text-align: center;
 }
-
-#rating_style{
-    font-size: 20px;
 }

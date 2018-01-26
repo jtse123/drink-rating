@@ -67,24 +67,11 @@ def drink_comments(request, fk):
 
 
     elif request.method == 'POST':
-
-    #     comments = Rating.objects.filter(drink_id=fk)
-
-        # serializer = RatingSerializer(data=request.data)
-        # print(serializer)
         import pdb
         try:
 
             rating = Rating.objects.get(ip_address=request.META['REMOTE_ADDR'], drink_id=Drink.objects.get(id=fk))
-            # pdb.set_trace()
-            # print(rating.comment)
-            # print(request.data['comment'])
-            # pdb.set_trace()
             print(request.data['comment'])
-
-            # rating.update(comment=request.data['comment']
-            #               , rating=request.data['rating']
-            #               )
 
             rating.comment = request.data['comment']
             rating.rating = request.data['rating']

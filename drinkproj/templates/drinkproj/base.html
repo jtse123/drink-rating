@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/drinkproj.css' %}">
+        <link rel="stylesheet" href="{% static 'css/drink_info_page.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base_page.css' %}">
 
         {#loads things needed for angular#}
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -31,7 +33,7 @@
                     <img src="https://d28wdra5vrkblv.cloudfront.net/media/consumer/img/logos/logo_bs_color_2x-1.38e83716c85e.png">
                 </a>
             </div>
-            <div class="base_title col-xs-8">
+            <div class="base_title col-sm-8 col-xs-12">
                 <p id = title_text><a href="{% url 'home' %}">Drink Rater</a></p>
 
             </div>

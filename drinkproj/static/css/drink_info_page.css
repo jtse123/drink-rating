@@ -1,0 +1,29 @@
+/*Drink Info Page*/
+/*drink info styling*/
+#overall_rating{
+    font-weight: bold;
+    font-size:calc(16px + 1vw);
+}
+
+#rating_style{
+    font-size: 20px;
+}
+
+#manufacturer{
+    font-size:calc(14px + 0.5vw);
+}
+
+#drink_description{
+    font-size:calc(12px + 0.4vw);
+}
+
+.drink_name{
+    font-size:calc(20px + 1.5vw);
+    font-weight: bold;
+}
+
+.drink_thumb img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: top
+}
