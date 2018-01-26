@@ -15,6 +15,6 @@
 
 }
 
-/*#title_text{*/
-    /*font-size: calc(35px + 1vw);*/
-/*}*/
+#title_text{
+    font-size: calc(35px + 1vw);
+}

@@ -67,3 +67,10 @@ a.md-default-theme:not(.md-button), a:not(.md-button) {
         text-align: center;
 }
 }
+
+/*event lineup images*/
+.event_lineup_image{
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}

@@ -6,7 +6,9 @@
 }
 
 #rating_style{
-    font-size: 20px;
+    font-size:calc(15px + 1vw);
+    /*font-size: 20px;*/
+    font-weight: bold;
 }
 
 #manufacturer{
@@ -26,4 +28,8 @@
     max-width: 100%;
     height: auto;
     vertical-align: top
+}
+
+.rating_form{
+    padding-bottom:20px;
 }

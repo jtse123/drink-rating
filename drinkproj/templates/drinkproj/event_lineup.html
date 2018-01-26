@@ -15,7 +15,7 @@
         <a href="{% url 'drink_info' id=item.drink_id %}">Rate</a>
         {% if item.drink.image.url != None %}
             <a href="{% url 'drink_info' id=item.drink_id %}">
-                <img src="{{ item.drink.image.url }}"/></a>
+                <img class="event_lineup_image"src="{{ item.drink.image.url }}"/></a>
         {% endif %}
     {% endfor %}
     </div>

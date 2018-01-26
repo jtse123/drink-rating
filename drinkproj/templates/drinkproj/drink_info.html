@@ -47,11 +47,11 @@
 {#        <form method="post" class= col-xs-12 ng-submit="submit()" ng-controller="ProjectController">#}
 
 {#    Post method for view (backend)#}
-    <form method="post" class="col-xs-12" ng-submit="submit()">
+    <form method="post" class="col-xs-12 rating_form standard_font" ng-submit="submit()">
             {% csrf_token %}
-            comment
+            Comment
             <input type="text" ng-model="comment" name="comment" ng-init="comment=''" /><br>
-            rating
+            Rating
             <select ng-model="rating" name="rating">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -64,7 +64,7 @@
 
 {#        Display comments#}
         <div ng-repeat="comment in comments_data | orderBy: '-post_date'">
-            <div class="rating_instance">
+            <div class="rating_instance standard_font">
                 <h6 id="rating_style">{$ comment.rating $} out of 5 Stars</h6>
                 <p id ="comment_style">{$ comment.comment $}</p>
             </div>
